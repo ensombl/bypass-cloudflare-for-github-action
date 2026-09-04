@@ -1,3 +1,14 @@
+## v3.0.0
+
+### Changed
+- **IP source**: replaced the `api64.ipify.org` runner-IP lookup with GitHub's published Actions IP ranges (`https://api.github.com/meta`, `.actions` key). The Cloudflare IP list now holds the full set of GitHub Actions CIDR ranges instead of a single runner IP.
+
+### Removed (breaking)
+- **`disable_bot_fight_mode` input** and its `bfm_propagation_delay` companion input have been removed, along with the Bot Fight Mode disable/restore steps. The IP-list WAF bypass is now the only bypass mechanism. Note this does not suppress Super Bot Fight Mode / Bot Fight Mode checks (see README limitations) — if you relied on `disable_bot_fight_mode`, stay on `v2.x`.
+- Token no longer needs **Bot Management > Edit** or **Zone > Read** permissions.
+
+---
+
 ## v2.1.0
 
 ### Added
